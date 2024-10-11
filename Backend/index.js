@@ -17,12 +17,14 @@ cron.schedule('0 */2 * * *', async () => {
       await storeCryptoData(cryptoData);
     }
   });
-  
+console.log('Cron job is running...');
 app.use(cors());
 app.use('/',statsRoute);
 
+app.get('/',(rq,res)=>{
+  res.send('Home')
+});
 
-console.log('Cron job is running...');
 
 app.listen(port,()=>{
     console.log(`Server is running on port ${port}`);
