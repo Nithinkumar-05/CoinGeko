@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const cron = require('node-cron');
-const axios = require("axios");
+const cors = require('cors');
 const express = require("express")
 const connection = require('./connection/database.connection')
 const {fetchCryptoData} = require('./controllers/fetchData.controller');
@@ -18,7 +18,7 @@ cron.schedule('0 */2 * * *', async () => {
     }
   });
   
-
+app.use(cors());
 app.use('/',statsRoute);
 
 
