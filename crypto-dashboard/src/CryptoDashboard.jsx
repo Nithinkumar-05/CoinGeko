@@ -10,7 +10,7 @@ const CryptoDashboard = () => {
 
   const fetchStats = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/stats?coin=${coin}`);
+      const response = await axios.get(`https://coin-geko-eight.vercel.app/stats?coin=${coin}`);
       setStats(response.data);
       setError(null);
     } catch (err) {
@@ -20,7 +20,7 @@ const CryptoDashboard = () => {
 
   const fetchDeviation = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/deviation?coin=${coin}`);
+      const response = await axios.get(`https://coin-geko-eight.vercel.app/deviation?coin=${coin}`);
       setDeviation(response.data);
       setError(null);
     } catch (err) {
