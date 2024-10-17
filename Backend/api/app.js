@@ -1,15 +1,8 @@
-// api/app.js
-const express = require('express');
-const cors = require('cors');
-const statsRoute = require('../routes/stats.route');
+const { send } = require('micro');
+const cors = require('micro-cors')();
 
-const app = express();
+const handler = async (req, res) => {
+  send(res, 200, 'Crypto Data Server is running');
+};
 
-app.use(cors());
-app.use('/', statsRoute);
-
-app.get('/', (req, res) => {
-    res.send('Crypto Data Server is running');
-});
-
-module.exports = app;
+module.exports = cors(handler);
