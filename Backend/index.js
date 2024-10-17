@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const cors = require('cors');
+const cors = require('micro-cors')(); // This will allow all origins
 const express = require("express");
 const connection = require('./connection/database.connection');
 const statsRoute = require('./routes/stats.route');
