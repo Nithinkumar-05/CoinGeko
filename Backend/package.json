@@ -5,10 +5,11 @@
   "scripts": {
     "start": "node index.js",
     "build": "npm install",
+    "dev": "vercel dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=14.x"
   },
   "keywords": [],
   "author": "",
